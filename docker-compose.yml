@@ -35,7 +35,7 @@ services:
       - ./client:/app
     ports:
       - 3001:3000
-    command: yarn nuxt -p 3000 -b 0.0.0.0
+    command: yarn nuxt -PORT=3000 -HOST=0.0.0.0
 
 volumes:
   postgres: {}
