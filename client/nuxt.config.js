@@ -47,6 +47,8 @@ module.exports = {
   */
   axios: {
     // See https://github.com/nuxt-community/axios-module#options
+	baseURL: 'http://api:3000',
+	retry: { retries: 3 }
   },
 
   /*
