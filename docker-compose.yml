@@ -21,8 +21,6 @@ services:
       - frontend
     volumes:
       - ./api:/app
-    ports:
-      - 3000:3000
     command: bundle exec rails s -p 3000 -b 0.0.0.0
 
   client:
