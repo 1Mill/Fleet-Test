@@ -6,15 +6,6 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-
-
-15.times do |n|
-	Customer.create(
-		:name => "Customer #{n}",
-		:email => "Rando#{n}@test.erb"
-	)
-end
-
 shippers = ["Next Worldwde Express", "DHL", "World Class Shipping"]
 3.times do |n|
 	Shipper.create(
@@ -26,5 +17,13 @@ providers = ["AAA", "Bakery", "Ekberg Sporthorses"]
 3.times do |n|
 	Provider.create(
 		:name => providers[n]
+	)
+end
+
+15.times do |n|
+	Customer.create(
+		:name => "Customer #{n}",
+		:email => "Rando#{n}@test.erb",
+		:company => Shipper.first
 	)
 end
