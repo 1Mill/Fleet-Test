@@ -3,9 +3,9 @@ class ProvidersController < ApplicationController
 
   # GET /providers
   def index
-    @providers = Provider.includes(:customers)
+    @providers = Provider.includes(:customers, :trackings)
 
-    render json: @providers.as_json(:include => :customers)
+    render json: @providers.as_json(:include =>  [:customers, :trackings])
   end
 
   # GET /providers/1
