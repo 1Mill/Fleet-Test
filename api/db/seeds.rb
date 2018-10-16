@@ -27,3 +27,11 @@ end
 		:company => (Shipper.all + Provider.all).sample
 	)
 end
+
+15.times do |n|
+	Tracking.create(
+		:event_date => Time.at(Time.now - rand(10.years)),
+		:event_type => [:status, :pickup, :exception].sample,
+		:trackable => (Shipper.all + Provider.all).sample
+	)
+end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_16_021713) do
+ActiveRecord::Schema.define(version: 2018_10_16_040006) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,6 +35,16 @@ ActiveRecord::Schema.define(version: 2018_10_16_021713) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "trackings", force: :cascade do |t|
+    t.datetime "event_date"
+    t.integer "event_type"
+    t.string "trackable_type"
+    t.bigint "trackable_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["trackable_type", "trackable_id"], name: "index_trackings_on_trackable_type_and_trackable_id"
   end
 
 end
