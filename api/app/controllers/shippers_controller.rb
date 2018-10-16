@@ -3,9 +3,9 @@ class ShippersController < ApplicationController
 
   # GET /shippers
   def index
-    @shippers = Shipper.all
+    @shippers = Shipper.includes(:customers)
 
-    render json: @shippers
+    render json: @shippers.as_json(:include => :customers)
   end
 
   # GET /shippers/1
