@@ -24,6 +24,6 @@ end
 	Customer.create(
 		:name => "Customer #{n}",
 		:email => "Rando#{n}@test.erb",
-		:company => Shipper.first
+		:company => (Shipper.all + Provider.all).sample
 	)
 end
