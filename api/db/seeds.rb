@@ -12,3 +12,10 @@
 		:email => "Rando#{n}@test.erb"
 	)
 end
+
+shippers = ["Next Worldwde Express", "DHL", "World Class Shipping"]
+3.times do |n|
+	Shipper.create(
+		:name => shippers[n]
+	)
+end
